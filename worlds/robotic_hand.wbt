@@ -1,0 +1,27 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "../protos/AllegroHandRight.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.22277214073541995 0.6179113069833481 0.7540279769440181 0.8920130617642748
+  position -1.8673683579094442 -1.6553316851271735 1.847285957473464
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+Solid {
+  children [
+    AllegroHandRight {
+      translation 0 0 0.1
+      controller "real_controller"
+    }
+  ]
+}

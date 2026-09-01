@@ -1,0 +1,847 @@
+#VRML_SIM R2025a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the AllegroHandRight
+# Extracted from: /Users/angelacao/Documents/allegro_hand_description/urdf/allegro_hand_description_right.urdf
+
+PROTO AllegroHandRight [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "AllegroHandRight"  # Is `Robot.name`.
+  field  SFString    controller      "void"              # Is `Robot.controller`.
+  field  MFString    controllerArgs  []                  # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""                  # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE               # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE                # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE               # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF black PBRAppearance {
+          baseColor 0.200000 0.200000 0.200000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF base_link Mesh {
+          url "/Users/angelacao/Documents/allegro_hand_description/meshes/base_link.STL"
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 0.087156 0.996195
+          anchor 0.000000 0.043500 -0.001542
+          dampingConstant 3.0
+          staticFriction 10.0
+        }
+        device [
+          RotationalMotor {
+            name "joint_0.0"
+            maxVelocity 7.0
+            minPosition -0.47
+            maxPosition 0.47
+            maxTorque 15.0
+          }
+          PositionSensor {
+            name "joint_0.0_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 0.043500 -0.001542
+          rotation -1.000000 0.000000 0.000000 0.087266
+          children [
+            Shape {
+              appearance USE black
+              geometry DEF link_0_0 Mesh {
+                url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_0.0.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.000000 0.016400
+                dampingConstant 3.0
+                staticFriction 5.0
+              }
+              device [
+                RotationalMotor {
+                  name "joint_1.0"
+                  maxVelocity 7.0
+                  minPosition -0.196
+                  maxPosition 1.61
+                  maxTorque 15.0
+                }
+                PositionSensor {
+                  name "joint_1.0_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.000000 0.016400
+                children [
+                  Shape {
+                    appearance USE black
+                    geometry DEF link_1_0 Mesh {
+                      url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_1.0.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 0.054000
+                      dampingConstant 8.0
+                      staticFriction 10.0
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint_2.0"
+                        maxVelocity 7.0
+                        minPosition -0.174
+                        maxPosition 1.709
+                        maxTorque 15.0
+                      }
+                      PositionSensor {
+                        name "joint_2.0_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 0.054000
+                      children [
+                        Shape {
+                          appearance USE black
+                          geometry DEF link_2_0 Mesh {
+                            url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_2.0.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 0.038400
+                            dampingConstant 10.0
+                            staticFriction 12.0
+                          }
+                          device [
+                            RotationalMotor {
+                              name "joint_3.0"
+                              maxVelocity 7.0
+                              minPosition -0.227
+                              maxPosition 1.618
+                              maxTorque 15.0
+                            }
+                            PositionSensor {
+                              name "joint_3.0_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 0.038400
+                            children [
+                              Shape {
+                                appearance USE black
+                                geometry DEF link_3_0 Mesh {
+                                  url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_3.0.STL"
+                                }
+                              }
+                              Solid {
+                                translation 0.000000 0.000000 0.026700
+                                children [
+                                  Shape {
+                                    appearance DEF white PBRAppearance {
+                                      baseColor 0.900000 0.900000 0.900000
+                                      roughness 1.000000
+                                      metalness 0
+                                    }
+                                    geometry DEF link_3_0_tip Mesh {
+                                      url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_3.0_tip.STL"
+                                    }
+                                  }
+                                ]
+                                name "link_3.0_tip"
+                                boundingObject Sphere {
+                                  radius 0.012
+                                }
+                                physics Physics {
+                                  density -1
+                                  mass 0.016800
+                                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                  inertiaMatrix [
+                                    9.680000e-07 9.680000e-07 9.680000e-07
+                                    0.000000e+00 0.000000e+00 0.000000e+00
+                                  ]
+                                }
+                              }
+                            ]
+                            name "link_3.0"
+                            boundingObject Box {
+                               size 0.019600 0.027500 0.026700
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.009600
+                              centerOfMass [ 0.000000 0.000000 0.000000 ]
+                              inertiaMatrix [
+                                4.701248e-06 3.649312e-06 4.701248e-06
+                                1.255968e-06 1.293600e-06 1.762200e-06
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "link_2.0"
+                      boundingObject Box {
+                         size 0.019600 0.027500 0.038400
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.035500
+                        centerOfMass [ 0.000000 0.000000 0.000000 ]
+                        inertiaMatrix [
+                          2.639792e-05 1.349485e-05 2.639792e-05
+                          6.679680e-06 4.783625e-06 9.372000e-06
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "link_1.0"
+                boundingObject Box {
+                   size 0.019600 0.027500 0.054000
+                }
+                physics Physics {
+                  density -1
+                  mass 0.065000
+                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                  inertiaMatrix [
+                    7.956542e-05 2.470888e-05 7.956542e-05
+                    1.719900e-05 8.758750e-06 2.413125e-05
+                  ]
+                }
+              }
+            }
+          ]
+          name "link_0.0"
+          boundingObject Box {
+             size 0.019600 0.027500 0.016400
+          }
+          physics Physics {
+            density -1
+            mass 0.011900
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              1.016667e-06 6.476773e-07 1.016667e-06
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 0.000000 1.000000
+          anchor 0.000000 0.000000 0.000700
+          dampingConstant 3.0
+          staticFriction 10.0
+        }
+        device [
+          RotationalMotor {
+            name "joint_4.0"
+            maxVelocity 7.0
+            minPosition -0.47
+            maxPosition 0.47
+            maxTorque 15.0
+          }
+          PositionSensor {
+            name "joint_4.0_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 0.000000 0.000700
+          children [
+            Shape {
+              appearance USE black
+              geometry USE link_0_0
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.000000 0.016400
+                dampingConstant 3.0
+                staticFriction 5.0
+              }
+              device [
+                RotationalMotor {
+                  name "joint_5.0"
+                  maxVelocity 7.0
+                  minPosition -0.196
+                  maxPosition 1.61
+                  maxTorque 15.0
+                }
+                PositionSensor {
+                  name "joint_5.0_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.000000 0.016400
+                children [
+                  Shape {
+                    appearance USE black
+                    geometry USE link_1_0
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 0.054000
+                      dampingConstant 8.0
+                      staticFriction 10.0
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint_6.0"
+                        maxVelocity 7.0
+                        minPosition -0.174
+                        maxPosition 1.709
+                        maxTorque 15.0
+                      }
+                      PositionSensor {
+                        name "joint_6.0_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 0.054000
+                      children [
+                        Shape {
+                          appearance USE black
+                          geometry USE link_2_0
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 0.038400
+                            dampingConstant 10.0
+                            staticFriction 12.0
+                          }
+                          device [
+                            RotationalMotor {
+                              name "joint_7.0"
+                              maxVelocity 7.0
+                              minPosition -0.227
+                              maxPosition 1.618
+                              maxTorque 15.0
+                            }
+                            PositionSensor {
+                              name "joint_7.0_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 0.038400
+                            children [
+                              Shape {
+                                appearance USE black
+                                geometry USE link_3_0
+                              }
+                              Solid {
+                                translation 0.000000 0.000000 0.026700
+                                children [
+                                  Shape {
+                                    appearance USE white
+                                    geometry USE link_3_0_tip
+                                  }
+                                ]
+                                name "link_7.0_tip"
+                                boundingObject Sphere {
+                                  radius 0.012
+                                }
+                                physics Physics {
+                                  density -1
+                                  mass 0.016800
+                                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                  inertiaMatrix [
+                                    9.680000e-07 9.680000e-07 9.680000e-07
+                                    0.000000e+00 0.000000e+00 0.000000e+00
+                                  ]
+                                }
+                              }
+                            ]
+                            name "link_7.0"
+                            boundingObject Box {
+                               size 0.019600 0.027500 0.026700
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.009600
+                              centerOfMass [ 0.000000 0.000000 0.000000 ]
+                              inertiaMatrix [
+                                4.701248e-06 3.649312e-06 4.701248e-06
+                                1.255968e-06 1.293600e-06 1.762200e-06
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "link_6.0"
+                      boundingObject Box {
+                         size 0.019600 0.027500 0.038400
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.035500
+                        centerOfMass [ 0.000000 0.000000 0.000000 ]
+                        inertiaMatrix [
+                          2.639792e-05 1.349485e-05 2.639792e-05
+                          6.679680e-06 4.783625e-06 9.372000e-06
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "link_5.0"
+                boundingObject Box {
+                   size 0.019600 0.027500 0.054000
+                }
+                physics Physics {
+                  density -1
+                  mass 0.065000
+                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                  inertiaMatrix [
+                    7.956542e-05 2.470888e-05 7.956542e-05
+                    1.719900e-05 8.758750e-06 2.413125e-05
+                  ]
+                }
+              }
+            }
+          ]
+          name "link_4.0"
+          boundingObject Box {
+             size 0.019600 0.027500 0.016400
+          }
+          physics Physics {
+            density -1
+            mass 0.011900
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              1.016667e-06 6.476773e-07 1.016667e-06
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 -0.087156 0.996195
+          anchor 0.000000 -0.043500 -0.001542
+          dampingConstant 3.0
+          staticFriction 10.0
+        }
+        device [
+          RotationalMotor {
+            name "joint_8.0"
+            maxVelocity 7.0
+            minPosition -0.47
+            maxPosition 0.47
+            maxTorque 15.0
+          }
+          PositionSensor {
+            name "joint_8.0_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 -0.043500 -0.001542
+          rotation 1.000000 0.000000 0.000000 0.087266
+          children [
+            Shape {
+              appearance USE black
+              geometry USE link_0_0
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 1.000000 0.000000
+                anchor 0.000000 0.000000 0.016400
+                dampingConstant 3.0
+                staticFriction 5.0
+              }
+              device [
+                RotationalMotor {
+                  name "joint_9.0"
+                  maxVelocity 7.0
+                  minPosition -0.196
+                  maxPosition 1.61
+                  maxTorque 15.0
+                }
+                PositionSensor {
+                  name "joint_9.0_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.000000 0.000000 0.016400
+                children [
+                  Shape {
+                    appearance USE black
+                    geometry USE link_1_0
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 0.054000
+                      dampingConstant 8.0
+                      staticFriction 10.0
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint_10.0"
+                        maxVelocity 7.0
+                        minPosition -0.174
+                        maxPosition 1.709
+                        maxTorque 15.0
+                      }
+                      PositionSensor {
+                        name "joint_10.0_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 0.054000
+                      children [
+                        Shape {
+                          appearance USE black
+                          geometry USE link_2_0
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 0.038400
+                            dampingConstant 10.0
+                            staticFriction 12.0
+                          }
+                          device [
+                            RotationalMotor {
+                              name "joint_11.0"
+                              maxVelocity 7.0
+                              minPosition -0.227
+                              maxPosition 1.618
+                              maxTorque 15.0
+                            }
+                            PositionSensor {
+                              name "joint_11.0_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 0.038400
+                            children [
+                              Shape {
+                                appearance USE black
+                                geometry USE link_3_0
+                              }
+                              Solid {
+                                translation 0.000000 0.000000 0.026700
+                                children [
+                                  Shape {
+                                    appearance USE white
+                                    geometry USE link_3_0_tip
+                                  }
+                                ]
+                                name "link_11.0_tip"
+                                boundingObject Sphere {
+                                  radius 0.012
+                                }
+                                physics Physics {
+                                  density -1
+                                  mass 0.016800
+                                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                  inertiaMatrix [
+                                    9.680000e-07 9.680000e-07 9.680000e-07
+                                    0.000000e+00 0.000000e+00 0.000000e+00
+                                  ]
+                                }
+                              }
+                            ]
+                            name "link_11.0"
+                            boundingObject Box {
+                               size 0.019600 0.027500 0.026700
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.009600
+                              centerOfMass [ 0.000000 0.000000 0.000000 ]
+                              inertiaMatrix [
+                                4.701248e-06 3.649312e-06 4.701248e-06
+                                1.255968e-06 1.293600e-06 1.762200e-06
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "link_10.0"
+                      boundingObject Box {
+                         size 0.019600 0.027500 0.038400
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.035500
+                        centerOfMass [ 0.000000 0.000000 0.000000 ]
+                        inertiaMatrix [
+                          2.639792e-05 1.349485e-05 2.639792e-05
+                          6.679680e-06 4.783625e-06 9.372000e-06
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "link_9.0"
+                boundingObject Box {
+                   size 0.019600 0.027500 0.054000
+                }
+                physics Physics {
+                  density -1
+                  mass 0.065000
+                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                  inertiaMatrix [
+                    7.956542e-05 2.470888e-05 7.956542e-05
+                    1.719900e-05 8.758750e-06 2.413125e-05
+                  ]
+                }
+              }
+            }
+          ]
+          name "link_8.0"
+          boundingObject Box {
+             size 0.019600 0.027500 0.016400
+          }
+          physics Physics {
+            density -1
+            mass 0.011900
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              1.016667e-06 6.476773e-07 1.016667e-06
+              0.000000e+00 0.000000e+00 0.000000e+00
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          position 0.829500
+          axis 0.000000 -0.087156 -0.996195
+          anchor -0.018200 0.019333 -0.045987
+          dampingConstant 3.0
+          staticFriction 10.0
+        }
+        device [
+          RotationalMotor {
+            name "joint_12.0"
+            maxVelocity 7.0
+            minPosition 0.263
+            maxPosition 1.396
+            maxTorque 15.0
+          }
+          PositionSensor {
+            name "joint_12.0_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.018200 0.019333 -0.045987
+          rotation -0.687606 -0.292272 -0.664662 2.683323
+          children [
+            Pose {
+              rotation 1.000000 0.000000 0.000000 3.141593
+              children [
+                Shape {
+                  appearance USE black
+                  geometry DEF link_12_0_right Mesh {
+                    url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_12.0_right.STL"
+                  }
+                }
+              ]
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 1.000000
+                anchor -0.027000 0.005000 0.039900
+                dampingConstant 3.0
+                staticFriction 5.0
+              }
+              device [
+                RotationalMotor {
+                  name "joint_13.0"
+                  maxVelocity 7.0
+                  minPosition -0.105
+                  maxPosition 1.163
+                  maxTorque 15.0
+                }
+                PositionSensor {
+                  name "joint_13.0_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation -0.027000 0.005000 0.039900
+                children [
+                  Shape {
+                    appearance USE black
+                    geometry DEF link_13_0 Mesh {
+                      url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_13.0.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                      anchor 0.000000 0.000000 0.017700
+                      dampingConstant 3.0
+                      staticFriction 10.0
+                    }
+                    device [
+                      RotationalMotor {
+                        name "joint_14.0"
+                        maxVelocity 7.0
+                        minPosition -0.189
+                        maxPosition 1.644
+                        maxTorque 15.0
+                      }
+                      PositionSensor {
+                        name "joint_14.0_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      translation 0.000000 0.000000 0.017700
+                      children [
+                        Shape {
+                          appearance USE black
+                          geometry DEF link_14_0 Mesh {
+                            url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_14.0.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 0.051400
+                            dampingConstant 3.0
+                            staticFriction 12.0
+                          }
+                          device [
+                            RotationalMotor {
+                              name "joint_15.0"
+                              maxVelocity 7.0
+                              minPosition -0.162
+                              maxPosition 1.719
+                              maxTorque 15.0
+                            }
+                            PositionSensor {
+                              name "joint_15.0_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 0.051400
+                            children [
+                              Shape {
+                                appearance USE black
+                                geometry DEF link_15_0 Mesh {
+                                  url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_15.0.STL"
+                                }
+                              }
+                              Solid {
+                                translation 0.000000 0.000000 0.042300
+                                children [
+                                  Shape {
+                                    appearance USE white
+                                    geometry DEF link_15_0_tip Mesh {
+                                      url "/Users/angelacao/Documents/allegro_hand_description/meshes/link_15.0_tip.STL"
+                                    }
+                                  }
+                                ]
+                                name "link_15.0_tip"
+                                boundingObject Sphere {
+                                  radius 0.012
+                                }
+                                physics Physics {
+                                  density -1
+                                  mass 0.016800
+                                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                                  inertiaMatrix [
+                                    9.680000e-07 9.680000e-07 9.680000e-07
+                                    0.000000e+00 0.000000e+00 0.000000e+00
+                                  ]
+                                }
+                              }
+                            ]
+                            name "link_15.0"
+                            boundingObject Box {
+                               size 0.019600 0.027500 0.042300
+                            }
+                            physics Physics {
+                              density -1
+                              mass 0.038800
+                              centerOfMass [ 0.000000 0.000000 0.000000 ]
+                              inertiaMatrix [
+                                3.292232e-05 1.474930e-05 3.292232e-05
+                                8.042076e-06 5.228300e-06 1.128352e-05
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "link_14.0"
+                      boundingObject Box {
+                         size 0.019600 0.027500 0.051400
+                      }
+                      physics Physics {
+                        density -1
+                        mass 0.038000
+                        centerOfMass [ 0.000000 0.000000 0.000000 ]
+                        inertiaMatrix [
+                          4.304399e-05 1.444519e-05 4.304399e-05
+                          9.570680e-06 5.120500e-06 1.342825e-05
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "link_13.0"
+                boundingObject Box {
+                   size 0.019600 0.027500 0.017700
+                }
+                physics Physics {
+                  density -1
+                  mass 0.011900
+                  centerOfMass [ 0.000000 0.000000 0.000000 ]
+                  inertiaMatrix [
+                    4.242509e-06 4.523626e-06 4.242509e-06
+                    1.032087e-06 1.603525e-06 1.448081e-06
+                  ]
+                }
+              }
+            }
+          ]
+          name "link_12.0"
+          boundingObject Box {
+             size 0.035800 0.034000 0.045500
+          }
+          physics Physics {
+            density -1
+            mass 0.017600
+            centerOfMass [ 0.000000 0.000000 0.000000 ]
+            inertiaMatrix [
+              1.892733e-05 1.430082e-05 1.892733e-05
+              7.167160e-06 5.355680e-06 6.806800e-06
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject Box {
+       size 0.040800 0.113000 0.095000
+    }
+    physics Physics {
+      density -1
+      mass 0.415400
+      centerOfMass [ 0.000000 0.000000 0.047500 ]
+      inertiaMatrix [
+        1.000000e-04 1.000000e-04 1.000000e-04
+        0.000000e+00 0.000000e+00 0.000000e+00
+      ]
+    }
+  }
+}
