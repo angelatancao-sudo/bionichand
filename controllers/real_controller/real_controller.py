@@ -98,7 +98,15 @@ for name in joint_names:
         motor.setPosition(0.263 if name == "joint_12.0" else 0.0)
         motors.append(motor)
 
-data = pd.read_csv('/Users/angelacao/Documents/robotic_hand/controllers/real_controller/rms_features_for_controller.csv')
+# data = pd.read_csv('/Users/angelacao/Documents/robotic_hand/controllers/real_controller/rms_features_for_controller.csv')
+
+csv_path = os.path.join(script_dir, 'rms_features_for_controller.csv')
+
+try:
+    data = pd.read_csv(csv_path)
+    print("Feature dataset loaded successfully!")
+except Exception as e:
+    print(f"Failed to load CSV: {e}")
 data.columns = data.columns.str.strip()
 if 'gesture' in data.columns and data['gesture'].dtype == object:
   data['gesture'] = data['gesture'].str.strip()
